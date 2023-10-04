@@ -1,15 +1,14 @@
 # SumRec
 
-This is the official implementation of the following paper: Ryutaro Asahara, Masaki Takahashi, Chiho Iwahashi and Michimasa Inaba. SumRec: A Framework for Recommendation using Open-Domain Dialogue. 2023.
+This is the official implementation of the following paper: Ryutaro Asahara, Masaki Takahashi, Chiho Iwahashi and Michimasa Inaba. SumRec: A Framework for Recommendation using Open-Domain Dialogue. PACLIC 2023.
 
 >Abstract<br>
->Chat dialogues contain a breadth of useful information about a speaker's interests, preferences, and experiences.
->Knowledge from open-domain chat can be used to personalize various systems and offer recommendations for advanced information.
->This study proposed a new framework, SumRec, for recommending information obtained from open-domain chat dialogues.
->It also examines the framework using ChatRec, a newly constructed dataset for training and evaluation.
->To extract speaker and item characteristics, the SumRec framework uses a large language model (LLM) to generate a summary of speaker information from a dialogue and a recommendation information of the type of user for which the item is suggested for from the item information, respectively.
->These are input into the score estimation model, generating a recommendation score.
->Experimental results show that SumRec framework performs better at providing recommendations than the baseline method, which uses dialogues and item descriptions as they are.
+>Chat dialogues contain considerable useful information about a speaker’s interests, preferences, and experiences.
+>Thus, knowledge from open-domain chat dialogue can be used to personalize various systems and offer recommendations for advanced information..This study proposed a novel framework SumRec for recommending information from open-domain chat dialogue.
+>The study also examined the framework using ChatRec, a newly constructed dataset for training and evaluation \footnote{Our dataset and code is publicly available at https://github.com/Ryutaro-A/SumRec . 
+>To extract the speaker and item characteristics, the SumRec framework employs a large language model (LLM) to generate a summary of the speaker information from a dialogue and to recommend information about an item according to the type of user.
+>The speaker and item information are then input into a score estimation model, generating a recommendation score.
+>Experimental results show that the SumRec framework provides better recommendations than the baseline method of using dialogues and item descriptions in their original form.
 
 ## Overview
 The code and sample data for our work is organized as:
@@ -83,6 +82,6 @@ This software is released under the MIT License, see LICENSE.txt.
 
 ## Contacts
 
-Twitter: [@ryu1104_m](https://twitter.com/ryu1104_m)
+Twitter: [@Ryu_pro_m](https://twitter.com/Ryu_pro_m)
 
 Mail: ryu1104.as[at]gmail.com
