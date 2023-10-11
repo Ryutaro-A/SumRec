@@ -12,7 +12,50 @@ Comming Soon.
 >The speaker and item information are then input into a score estimation model, generating a recommendation score.
 >Experimental results show that the SumRec framework provides better recommendations than the baseline method of using dialogues and item descriptions in their original form.
 
+## Overview
+The code and sample data for our work is organized as:
 
+* `src/` contains the main model and evaluation scripts
+* `data/chat_and_rec/` has our dataset
+* `data/prompts/` has our prompt we used to generate dialogue summary and recommendation information.
+* `data/crossval_split/` has a json file specifying the division method for cross-validation
+
+
+## Requirements
+1. The implementation is based on Python 3.x. To install the dependencies used, run:
+```.bash
+pip install -r requirements.txt
+```
+2. Install Juman++ 2.0.0-rc3
+```.bash
+sudo apt update -q
+sudo apt install -qy cmake g++ make wget xz-utils
+
+wget "https://github.com/ku-nlp/jumanpp/releases/download/v2.0.0-rc3/jumanpp-2.0.0-rc3.tar.xz"
+tar xvf jumanpp-2.0.0-rc3.tar.xz
+
+cd jumanpp-2.0.0-rc3
+mkdir bld && cd bld
+
+curl -LO https://github.com/catchorg/Catch2/releases/download/v2.13.8/catch.hpp
+mv catch.hpp ../libs/
+cmake .. -DCMAKE_BUILD_TYPE=Release
+sudo make install -j "$(nproc)"
+sudo make install
+```
+
+## Get Started
+
+Runinng train, test, evaluations scripts if you excecute `train_sumrec.sh`.
+
+```.bash
+sh train_sumrec.sh
+```
+
+If you want to try baseline, you can excute `train_baseline.sh`.
+```.bash
+sh train_baseline.sh
+```
 
 ## License
 This software is released under the MIT License, see LICENSE.txt.
