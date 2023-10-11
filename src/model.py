@@ -6,6 +6,7 @@ from utils.outputs import BiEncoderOutput, AttentionBiEncoderOutput
 from transformers.modeling_outputs import ModelOutput
 
 
+<<<<<<< Updated upstream
 class BaseOneEncoder(nn.Module):
     def __init__(
         self,
@@ -90,6 +91,8 @@ class BaseBiEncoder(nn.Module):
             self.bert = AutoModel(config)
 
 
+=======
+>>>>>>> Stashed changes
 class BaseDoubleBERTEncoder(nn.Module):
     def __init__(
         self,
@@ -99,6 +102,7 @@ class BaseDoubleBERTEncoder(nn.Module):
     ):
 
         super().__init__()
+<<<<<<< Updated upstream
         if args.use_pretrain_model:
             # 対話履歴用のEncoder
             self.speaker_bert = AutoModel.from_pretrained(
@@ -118,6 +122,23 @@ class BaseDoubleBERTEncoder(nn.Module):
         else:
             self.peaker_bert = AutoModel(config)
             self.spot_bert = AutoModel(config)
+=======
+        # 対話履歴用のEncoder
+        self.speaker_bert = AutoModel.from_pretrained(
+            args.pretrained_model_name,
+            config,
+            output_attentions=True,
+            return_dict=True,
+        )
+
+        # 観光地説明文用のEncoder
+        self.spot_bert = AutoModel.from_pretrained(
+            args.pretrained_model_name,
+            config,
+            output_attentions=True,
+            return_dict=True,
+        )
+>>>>>>> Stashed changes
 
 
 
@@ -163,6 +184,7 @@ class DoubleBERTEncoder(BaseDoubleBERTEncoder):
 
         loss = self.loss_function(out, target_score)
 
+<<<<<<< Updated upstream
         # attentionをreturnするようにすると学習時間が３倍くらいになる！
         # dialogue_attentions = [dialogue.attentions[i].detach().cpu() for i in range(len(dialogue.attentions))]
         # desc_attentions = [dialogue.attentions[i].detach().cpu() for i in range(len(desc.attentions))]
@@ -514,6 +536,8 @@ class GraphBERT(BaseBiEncoder):
         # dialogue_attention = [data.detach() for data in dialogue.attentions]
         # desc_attention = [data.detach() for data in desc.attentions]
 
+=======
+>>>>>>> Stashed changes
         return ModelOutput(
             logits=out,
             loss=loss,
